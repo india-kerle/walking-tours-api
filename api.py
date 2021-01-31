@@ -1,13 +1,14 @@
-from flask import Flask, request
+from flask import Flask, request, make_response
 from flask_restful import Resource, Api
 import scraper
 
 app = Flask(__name__)
 api = Api(app)
 
-#class Home(Resource):
-#    def get(self):
-#        return make_response(render_template('index.html'))
+class Home(Resource):
+    def get(self):
+        headers = {'Content-Type': 'text/html'}
+        return make_response(render_template('index.html'),200,headers)
 
 class tours(Resource):
     def get(self):
@@ -24,7 +25,7 @@ class guides(Resource):
 
     	return guide
 
-#app.add_resource(home, '/')
+app.add_resource(home, '/')
 api.add_resource(tours, '/tours')
 api.add_resource(guides, '/guides')
 
