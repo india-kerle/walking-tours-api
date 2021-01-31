@@ -36,12 +36,12 @@ GET https://walking-tours-ldn.herokuapp.com/guides
 Use this endpoint to return a list of all tours between two different dates. 
 
 ```
-/tours?start-date=YYYY-MM-DD&&end-date=YYYY-MM-DD
+/tours?start=YYYY-MM-DD&end=YYYY-MM-DD
 ```
 the start date and end date are required parameters. 
 
 <b> Sample Request </b>
 
 ```
-GET https://walking-tours-ldn.herokuapp.com/tours?start-date=2021-01-01&&end-date=2021-01-03
+GET https://walking-tours-ldn.herokuapp.com/tours?start=2021-01-01&end=2021-01-03
 ```
