@@ -12,8 +12,8 @@ class Home(Resource):
 
 class tours(Resource):
     def get(self):
-    	start = request.args.get('start-date', type = str, default = None)
-    	end = request.args.get('end-date', type = str, default = None)
+    	start = request.args.get('start', type = str, default = None)
+    	end = request.args.get('end', type = str, default = None)
     	tour = scraper.get_tours(start, end)
 
     	return tour
