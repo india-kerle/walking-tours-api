@@ -5,9 +5,9 @@ import scraper
 app = Flask(__name__)
 api = Api(app)
 
-class Home(Resource):
-    def get(self):
-        return make_response(render_template('index.html'))
+#class Home(Resource):
+#    def get(self):
+#        return make_response(render_template('index.html'))
 
 class tours(Resource):
     def get(self):
@@ -24,7 +24,7 @@ class guides(Resource):
 
     	return guide
 
-app.add_resource(home, '/')
+#app.add_resource(home, '/')
 api.add_resource(tours, '/tours')
 api.add_resource(guides, '/guides')
 
