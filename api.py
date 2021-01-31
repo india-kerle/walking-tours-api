@@ -25,7 +25,7 @@ class guides(Resource):
 
     	return guide
 
-app.add_resource(Home, '/')
+api.add_resource(Home, '/')
 api.add_resource(tours, '/tours')
 api.add_resource(guides, '/guides')
 
