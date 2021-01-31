@@ -41,17 +41,20 @@ def get_walk_info(all_the_dates):
 
 
         for index, item in enumerate(soups.findAll('a', {'class':'h4Title'}, href = True)):
-            walks = {}
-            walks['tour_date'] = day
-            walks['tour_time'] = time[index].text.strip()
-            walks['tour_name'] = item.text
-            walks['tour_desc_short'] = description[index].p.text.strip().replace('\xa0', '')
-            walks['meeting_spot'] = tube[index].text
-            walks['tour_link'] = item['href']
-            walks['guide_name'] = guides[index].text
-            walks['guide_link'] = "https://walks.com" + guides[index]['href']
-
-            main.append(walks)
+            try:
+                walks = {}
+                walks['tour_date'] = day
+                walks['tour_time'] = time[index].text.strip()
+                walks['tour_name'] = item.text
+                walks['tour_desc_short'] = description[index].p.text.strip()
+                walks['meeting_spot'] = tube[index].text
+                walks['tour_link'] = item['href']
+                walks['guide_name'] = guides[index].text
+                walks['guide_link'] = "https://walks.com" + guides[index]['href']
+                
+                main.append(walks)
+            except IndexError:
+                continue
     
     return main  
 
